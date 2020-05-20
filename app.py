@@ -18,38 +18,38 @@ SURVEYS = [
     {
         'id': uuid.uuid4().hex,
         'profile': '',
-        'firstname': 'Test',
-        'lastname': 'Tester',
-        'gender': 'Male',
-        'favorite': 'PHP',
-        'favorite_why' : 'just like',
-        'php' : '10',
+        'firstname': 'Freilla Mae',
+        'lastname': 'Espinola',
+        'gender': 'Female',
+        'favorite': ['Python', 'PHP'],
+        'favorite_why' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec pharetra ipsum. Quisque egestas est eget felis volutpat pretium sed vel nisl. Pellentesque non pharetra nunc, quis pellentesque dolor. Sed pretium posuere ultrices. Integer dolor ligula, egestas eget mauris a, auctor pellentesque velit. Praesent pellentesque est laoreet, aliquam massa quis, hendrerit risus. Duis scelerisque rhoncus est et euismod. Phasellus vestibulum diam sit amet magna sodales bibendum. Duis nulla nulla, ultricies a mi nec, maximus laoreet purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse id quam eu ipsum tincidunt porta. Donec vitae urna lectus.',
+        'php' : '5',
         'python' : '10',
-        'questions' : 'none'
+        'questions' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec pharetra ipsum. Quisque egestas est eget felis volutpat pretium sed vel nisl. Pellentesque non pharetra nunc, quis pellentesque dolor.'
     },
     {
         'id': uuid.uuid4().hex,
         'profile': '',
-        'firstname': 'Test',
-        'lastname': 'Tester',
-        'gender': 'Male',
-        'favorite': 'PHP',
-        'favorite_why' : 'just like',
-        'php' : '8',
-        'python' : '8',
-        'questions' : 'none'
-    },
-    {
-        'id': uuid.uuid4().hex,
-        'profile': '',
-        'firstname': 'Test',
-        'lastname': 'Tester',
-        'gender': 'Male',
-        'favorite': 'PHP',
-        'favorite_why' : 'just like',
+        'firstname': 'Mai',
+        'lastname': 'Espinola',
+        'gender': 'Female',
+        'favorite': ['Python', 'PHP', 'Ruby'],
+        'favorite_why' : 'Duis ultrices, est ac aliquet vulputate, lorem lorem consectetur mi, et pulvinar magna leo sit amet nisi. Aenean libero nisi, ornare eget purus non, dignissim lacinia ligula. Praesent vitae erat iaculis, varius quam vitae, blandit risus. In feugiat lacinia leo ac consequat. Aenean eu sem ac odio posuere dignissim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec id euismod nisi. Duis ultricies ligula libero, eu eleifend mi mollis vel. Sed nec condimentum lectus. Fusce felis dolor, placerat et tempus eu, vestibulum cursus arcu',
         'php' : '5',
         'python' : '5',
-        'questions' : 'none'
+        'questions' : 'Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc rutrum eget tortor et bibendum. Nullam mollis quis tortor id vestibulum. Duis iaculis luctus nulla, ac interdum ipsum vehicula sit amet. Mauris id arcu odio. Aliquam erat volutpat.'
+    },
+    {
+        'id': uuid.uuid4().hex,
+        'profile': '',
+        'firstname': 'Mic',
+        'lastname': 'Tester',
+        'gender': 'Male',
+        'favorite': ['PHP'],
+        'favorite_why' : 'Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc rutrum eget tortor et bibendum. Nullam mollis quis tortor id vestibulum. Duis iaculis luctus nulla, ac interdum ipsum vehicula sit amet. Mauris id arcu odio. Aliquam erat volutpat.',
+        'php' : '2',
+        'python' : '2',
+        'questions' : 'Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc rutrum eget tortor et bibendum. Nullam mollis quis tortor id vestibulum. Duis iaculis luctus nulla, ac interdum ipsum vehicula sit amet. Mauris id arcu odio. Aliquam erat volutpat.'
     }
 ]
 
