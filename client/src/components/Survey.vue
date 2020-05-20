@@ -12,19 +12,19 @@
         <table class="table table-hover">
           <thead>
             <tr>
-              <th scope="col">Profile Image</th>
-              <th scope="col">Full Name</th>
-              <th scope="col">Last Name</th>
-              <th scope="col">Gender</th>
+              <th scope="col-3">Full Name</th>
+              <th scope="col-3">Last Name</th>
+              <th scope="col-2">Gender</th>
+              <th scope="col-4 table__col">Favorite Language</th>
               <th></th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="(survey, index) in surveys" :key="index">
-              <td>{{ survey.profile }}</td>
               <td>{{ survey.firstname }}</td>
               <td>{{ survey.lastname }}</td>
               <td>{{ survey.gender }}</td>
+              <td>{{ survey.favorite.join(', ') }}</td>
               <td>
                 <div class="btn-group" role="group">
                   <button
@@ -49,16 +49,6 @@
     </div>
     <b-modal ref="addSurveyModal" id="survey-modal" title="Add a new survey" hide-footer>
       <b-form @submit="onSubmit" @reset="onReset" class="w-100">
-        <b-form-group id="form-profile-group" label="Profile:" label-for="form-profile-upload">
-          <b-form-file
-            id="form-profile-upload"
-            v-model="addSurveyForm.profile"
-            :state="Boolean(file)"
-            accept=".jpg, .png, .gif"
-            placeholder="Choose a file or drop it here..."
-            drop-placeholder="Drop file here..."
-          ></b-form-file>
-        </b-form-group>
         <b-form-group id="form-firstname-group" label="Firstname:" label-for="form-firstname-input">
           <b-form-input id="form-firstname-input"
             type="text"
@@ -141,19 +131,6 @@
     </b-modal>
     <b-modal ref="editSurveyModal" id="survey-update-modal" title="Update" hide-footer>
       <b-form @submit="onSubmitUpdate" @reset="onResetUpdate" class="w-100">
-        <b-form-group
-          id="form-profile-edit-group"
-          label="Profile:"
-          label-for="form-profile-edit-upload">
-          <b-form-file
-            id="form-profile-edit-upload"
-            v-model="editForm.profile"
-            :state="Boolean(file)"
-            accept=".jpg, .png, .gif"
-            placeholder="Choose a file or drop it here..."
-            drop-placeholder="Drop file here..."
-          ></b-form-file>
-        </b-form-group>
         <b-form-group
           id="form-firstname-edit-group"
           label="Firstname:"
@@ -254,11 +231,11 @@ export default {
       value5: null,
       surveys: [],
       addSurveyForm: {
-        profile: '',
+        file: [],
         firstname: '',
         lastname: '',
         gender: '',
-        favorite: '',
+        favorite: [],
         favorite_why: '',
         php: '',
         python: '',
@@ -266,11 +243,11 @@ export default {
       },
       editForm: {
         id: '',
-        profile: '',
+        file: [],
         firstname: '',
         lastname: '',
         gender: '',
-        favorite: '',
+        favorite: [],
         favorite_why: '',
         php: '',
         python: '',
@@ -327,21 +304,19 @@ export default {
       this.editForm = survey;
     },
     initForm() {
-      this.addSurveyForm.profile = '';
       this.addSurveyForm.firstname = '';
       this.addSurveyForm.lastname = '';
       this.addSurveyForm.gender = '';
-      this.addSurveyForm.favorite = '';
+      this.addSurveyForm.favorite = [];
       this.addSurveyForm.favorite_why = '';
       this.addSurveyForm.php = '';
       this.addSurveyForm.python = '';
       this.addSurveyForm.questions = '';
       this.editForm.id = '';
-      this.editForm.profile = '';
       this.editForm.firstname = '';
       this.editForm.lastname = '';
       this.editForm.gender = '';
-      this.editForm.favorite = '';
+      this.editForm.favorite = [];
       this.editForm.favorite_why = '';
       this.editForm.php = '';
       this.editForm.python = '';
@@ -351,7 +326,6 @@ export default {
       evt.preventDefault();
       this.$refs.addSurveyModal.hide();
       const payload = {
-        profile: this.addSurveyForm.profile,
         firstname: this.addSurveyForm.firstname,
         lastname: this.addSurveyForm.lastname,
         gender: this.addSurveyForm.gender,
@@ -368,7 +342,6 @@ export default {
       evt.preventDefault();
       this.$refs.editSurveyModal.hide();
       const payload = {
-        profile: this.editForm.profile,
         firstname: this.editForm.firstname,
         lastname: this.editForm.lastname,
         gender: this.editForm.gender,

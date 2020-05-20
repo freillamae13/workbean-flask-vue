@@ -17,7 +17,6 @@ CORS(app, resources={r'/api/*': {'origins': '*'}})
 SURVEYS = [
     {
         'id': uuid.uuid4().hex,
-        'profile': '',
         'firstname': 'Freilla Mae',
         'lastname': 'Espinola',
         'gender': 'Female',
@@ -29,7 +28,6 @@ SURVEYS = [
     },
     {
         'id': uuid.uuid4().hex,
-        'profile': '',
         'firstname': 'Mai',
         'lastname': 'Espinola',
         'gender': 'Female',
@@ -41,7 +39,6 @@ SURVEYS = [
     },
     {
         'id': uuid.uuid4().hex,
-        'profile': '',
         'firstname': 'Mic',
         'lastname': 'Tester',
         'gender': 'Male',
@@ -60,7 +57,6 @@ def all_surveys():
         post_data = request.get_json()
         SURVEYS.append({
             'id': uuid.uuid4().hex,
-            'profile': post_data.get('profile'),
             'firstname': post_data.get('firstname'),
             'lastname': post_data.get('lastname'),
             'gender': post_data.get('gender'),
@@ -83,7 +79,6 @@ def single_survey(survey_id):
         remove_survey(survey_id)
         SURVEYS.append({
             'id': uuid.uuid4().hex,
-            'profile': post_data.get('profile'),
             'firstname': post_data.get('firstname'),
             'lastname': post_data.get('lastname'),
             'gender': post_data.get('gender'),
